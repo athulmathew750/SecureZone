@@ -1,0 +1,40 @@
+{% extends 'admin/admin_index.html' %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="/Assign_post/{{ id }}">
+  <table width="400" border="1" cellpadding="30" class="table table-dark">
+    <tr>
+      <td>Send Task</td>
+      <td><label>
+        <textarea name="textarea" id="textarea" cols="45" rows="5" class="form-control" required></textarea>
+      </label></td>
+    </tr>
+    <tr>
+      <td>Day</td>
+      <td><label>
+        <select name="select" id="select" class="form-control">
+            <option value="monday"> monday</option>
+            <option value="tuesday"> tuesday</option>
+            <option value="wednesday"> wednesday</option>
+            <option value="thursday"> thursday</option>
+            <option value="friday"> friday</option>
+            <option value="saturday"> saturdayday</option>
+            <option value="sunday"> sunday</option>
+        </select>
+      </label></td>
+    </tr>
+    <tr>
+        <td colspan="2"><div align="center"><input type="submit" name="button" id="button" value="assign" btn btn-primary /></div></td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>
+{% endblock %}

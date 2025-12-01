@@ -1,0 +1,52 @@
+{% extends 'admin/admin_index.html' %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+    <style>
+        .table-hover th{
+            background-color: #0c4128;
+            text-transform: uppercase;
+            height: 50px;
+        }
+    </style>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="" border="" cellpadding="30" class="table table-hover">
+    <tr>
+      <th>s/n</th>
+      <th>name</th>
+        <th>Address</th>
+      <th>image</th>
+      <th>id </th>
+      <th>mail</th>
+
+      <th>phone</th>
+      <th>edit/delete</th>
+      <th>view/send task</th>
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td>{{ forloop.counter }}</td>
+      <td>{{ i.security_name }}</td>
+        <td>{{ i.pin }}&nbsp;<br>{{ i.post }}<br>{{ i.place }}</td>
+      <td><img src="{{ i.image }}" alt="" width="90" height="90"/>&nbsp;</td>
+        <td><a href="{{ i.id_proof }}" class="btn btn-outline-secondary" style="width: 100px">proof</a></td>
+      <td>{{ i.email }}</td>
+
+      <td>{{ i.phone }}&nbsp;</td>
+      <td><p><a href="/Edit/{{ i.id }}#aa" class="btn btn-outline-info" style="width: 100px">edit</a></p>
+      <p><a href="/delete_security/{{ i.id }}" class="btn btn-outline-danger" style="width: 100px" >delete</a></p></td>
+      <td><p><a href="/ViewTask/{{ i.id }}#aa" class="btn btn-outline-warning" style="width: 100px">view task</a></p>
+      <p><a href="/Assign/{{ i.id }}#aa" class="btn btn-outline-warning" style="width: 100px">send task</a></p></td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+</body>
+</html>
+{% endblock %}

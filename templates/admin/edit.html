@@ -1,0 +1,67 @@
+{% extends 'admin/admin_index.html' %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form action="/Edit_post/{{ view.id }}" method="post" enctype="multipart/form-data" name="form1" id="form1">
+  <table width="400" border="1" cellpadding="30" class="table table-dark">
+    <tr>
+      <td>name</td>
+      <td><label for="textfield"></label>
+      <input type="text" name="textfield" id="textfield" value="{{ view.security_name }}" class="form-control"/></td>
+    </tr>
+    <tr>
+      <td>image</td>
+      <td><label for="fileField"></label>
+
+          <img src="{{ view.image }}" width="90" height="90">
+      <input type="file" name="fileField" id="fileField" class="form-control"/></td>
+    </tr>
+    <tr>
+      <td>id proof</td>
+      <td><label for="fileField2"></label>
+          <a href="{{ view.id_proof }}"></a>
+      <input type="file" name="proof" id="fileField2" class="form-control"/></td>
+    </tr>
+    <tr>
+      <td>mail</td>
+      <td><label for="textfield2"></label>
+      <input type="text" name="textfield2" id="textfield2" value="{{ view.email }}" class="form-control"/></td>
+    </tr>
+    <tr>
+      <td>pin</td>
+      <td><label for="textfield3"></label>
+      <input type="text" name="textfield3" id="textfield3" value="{{ view.pin }}" class="form-control"/></td>
+    </tr>
+    <tr>
+      <td>post</td>
+      <td><label for="textfield4"></label>
+      <input type="text" name="textfield4" id="textfield4" value="{{ view.post }}" class="form-control"/></td>
+    </tr>
+    <tr>
+      <td>place</td>
+      <td><label for="textfield5"></label>
+      <input type="text" name="textfield5" id="textfield5" value="{{ view.place }}" class="form-control"/></td>
+    </tr>
+    <tr>
+      <td>phone</td>
+      <td><label for="textfield6"></label>
+      <input type="text" name="textfield6" id="textfield6" value="{{ view.phone }}" class="form-control"/></td>
+    </tr>
+    <tr>
+      <td colspan="2"><label>
+        <div align="center">
+          <input type="submit" name="button" id="button" value="edit" class="btn btn-primary" />
+        </div>
+      </label></td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>
+{% endblock %}
